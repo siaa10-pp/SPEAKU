@@ -1,0 +1,917 @@
+<!doctype html>
+<html lang="id"><head><script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260918-05-13efa67","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YACgEZulLoA,0","Arial Narrow":"YAGyDvJ_4Ts,0","Arial Rounded MT Bold":"YAFcfoaHu-s,0","Arial":"YAGyDvJ_4Ts,0","Avenir Next":"YAFcfmNq6UY,0","Baloo 2":"YADK30bC6HQ,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Broken Glyph":"YADZ-exUkv0,0","Canva Sans":"YAFdJjTk5UU,1","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAFcfvtOAUY,1","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","Courier Prime":"YAD1aFjegN8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAFdJpU7Kkk,0","Georgia":"YAGzXkO0pEM,0","Ghost Mono":"YAHQutsX00Q,0","Hanken Grotesk":"YAFcfhwp99E,0","Helvetica Neue":"YAFcf6CtJfI,0","Helvetica":"YAFcf6CtJfI,0","IBM Plex Mono":"YAFdJkmvhGI,0","Impact":"YAFcfnjI7Vk,0","Instrument Serif":"YAHFeOnZNEk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YADK3zbC6RM,0","JetBrains Mono":"YAFdJksXcAk,0","Josefin Sans":"YAFdJjvw9Ps,0","Lato":"YAFdJuFCnaw,0","Libre Baskerville":"YACgEUFdPdA,0","Lobster":"YAD8SnSjSFI,0","Lora":"YACgEXvxf8Q,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YAFdtQi73Xs,0","Nunito":"YAFdJoNRMmU,1","Oleo Script":"YACgEQQ14jI,0","Oswald":"YACgEQY10lw,0","Pacifico":"YADLjORQ1u4,0","Phantom Sans":"YAFdJvgJ5TU,0","Playfair Display":"YAFdJhem5V8,1","Plus Jakarta Sans":"YAGvf3_u0_Q,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YAFdJpYtCxE,1","Raleway":"YAFdJhmxbVQ,1","Roboto Slab":"YAFdJswIKAg,0","Rockwell":"YAFcfyVZnN0,0","Rye":"YACgEdQP21k,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Source Serif 4":"YACgEfdj394,0","Space Grotesk":"YADZ-dYEmhg,0","Space Mono":"YADW1-vpsoc,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Trebuchet MS":"YAFcfrglpVA,0","UV Display":"YAEdVfSSpYo,0","UV Sans":"YAFdJvgJ5TU,0","Ubuntu":"YACgERDU--Q,0","Verdana":"YAGzXTctYtQ,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YAD1aFjegN8,0","ui-sans-serif":"YACkoD1yZN0,0"}}');</script><script src="/_sdk/83d6dfdadcd4750a.telemetry_sdk.js" integrity="sha512-XS4Dvzp6vbagZS9vFErihvr8aO3S0tH78KWUefn06fmL4WYqryBtZj/IOLITYj7dFA4gPVvPg1W/JB1DK3uLNQ=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPEAKU. — Public Speaking Practice</title>
+  <style>
+    :root {
+      --bg: #050505;
+      --panel: rgba(16, 16, 22, 0.82);
+      --line: rgba(255, 255, 255, 0.12);
+      --muted: #afb1bc;
+      --white: #f7f8ff;
+      --cyan: #48dfff;
+      --violet: #9370ff;
+      --magenta: #ff4bbd;
+      --danger: #ff7b93;
+      --success: #9dff72;
+    }
+
+    * { box-sizing: border-box; }
+
+    html, body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--white);
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button, textarea, input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    button:focus-visible,
+    textarea:focus-visible,
+    input:focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 3px;
+    }
+
+    .app-shell {
+      position: relative;
+      width: 100%;
+      min-height: calc(100 * min(var(--vh, 1vh), 1vh));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 18px;
+      isolation: isolate;
+      overflow: hidden;
+    }
+
+    .app-shell::before,
+    .app-shell::after {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      border-radius: 999px;
+      filter: blur(14px);
+      opacity: 0.5;
+      pointer-events: none;
+    }
+
+    .app-shell::before {
+      width: 420px;
+      height: 420px;
+      top: -150px;
+      left: -130px;
+      background: radial-gradient(circle, rgba(72, 223, 255, 0.34), transparent 68%);
+    }
+
+    .app-shell::after {
+      width: 470px;
+      height: 470px;
+      right: -180px;
+      bottom: -190px;
+      background: radial-gradient(circle, rgba(255, 75, 189, 0.3), transparent 68%);
+    }
+
+    .grid-lines {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      opacity: 0.36;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+      background-size: 54px 54px;
+      mask-image: radial-gradient(circle at center, black 0%, transparent 73%);
+    }
+
+    .orbit {
+      position: absolute;
+      z-index: -1;
+      width: 460px;
+      height: 460px;
+      border: 1px solid rgba(147, 112, 255, 0.16);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .orbit::before,
+    .orbit::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .orbit::before {
+      width: 9px;
+      height: 9px;
+      top: 51px;
+      left: 56px;
+      background: var(--cyan);
+      box-shadow: 0 0 23px var(--cyan);
+    }
+
+    .orbit::after {
+      width: 8px;
+      height: 8px;
+      right: 58px;
+      bottom: 55px;
+      background: var(--magenta);
+      box-shadow: 0 0 22px var(--magenta);
+    }
+
+    .main-card {
+      width: 100%;
+      max-width: 590px;
+      position: relative;
+    }
+
+    .screen {
+      display: none;
+      width: 100%;
+      min-height: 530px;
+      align-items: center;
+      justify-content: center;
+      animation: screenIn 0.42s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .screen.active {
+      display: flex;
+    }
+
+    .screen-inner {
+      width: 100%;
+      text-align: center;
+    }
+
+    .title {
+      margin: 0;
+      font-size: clamp(4.3rem, 15vw, 7.5rem);
+      line-height: 0.82;
+      letter-spacing: -0.09em;
+      font-weight: 900;
+      color: #ffffff;
+      text-shadow:
+        0 0 35px rgba(72, 223, 255, 0.19),
+        0 0 80px rgba(147, 112, 255, 0.2);
+    }
+
+    .tagline {
+      margin: 22px 0 38px;
+      color: var(--muted);
+      font-size: clamp(1rem, 3vw, 1.16rem);
+      letter-spacing: 0.02em;
+    }
+
+    .eyebrow {
+      display: block;
+      margin-bottom: 13px;
+      color: var(--cyan);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .topic-input-wrap,
+    .time-panel {
+      width: 100%;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 23px;
+      background: var(--panel);
+      box-shadow: 0 18px 65px rgba(0,0,0,0.38), inset 0 1px rgba(255,255,255,0.04);
+      backdrop-filter: blur(14px);
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 164px;
+      resize: vertical;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 15px;
+      padding: 15px 16px;
+      color: var(--white);
+      background: rgba(0,0,0,0.3);
+      line-height: 1.55;
+      transition: border-color .2s, box-shadow .2s, background .2s;
+    }
+
+    textarea::placeholder {
+      color: #747783;
+    }
+
+    textarea:focus {
+      border-color: rgba(72,223,255,0.82);
+      background: rgba(9, 20, 26, 0.68);
+      box-shadow: 0 0 0 4px rgba(72,223,255,0.12), 0 0 29px rgba(72,223,255,0.12);
+      outline: none;
+    }
+
+    .meta-row {
+      min-height: 23px;
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      margin: 12px 1px 0;
+      color: #b9bbc4;
+      font-size: 0.84rem;
+      text-align: left;
+    }
+
+    .error-message {
+      min-height: 22px;
+      margin: 12px 2px 0;
+      color: var(--danger);
+      font-size: 0.88rem;
+      text-align: left;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .text-button {
+      border: 0;
+      transition: transform .18s ease, box-shadow .18s ease, filter .18s ease, background .18s ease;
+    }
+
+    .primary-button {
+      width: 100%;
+      margin-top: 22px;
+      padding: 16px 22px;
+      border-radius: 15px;
+      color: #071016;
+      background: linear-gradient(105deg, var(--cyan), #91f4ff 45%, #b38cff);
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      box-shadow: 0 13px 35px rgba(72,223,255,0.22);
+    }
+
+    .primary-button:hover {
+      filter: brightness(1.08);
+      box-shadow: 0 16px 42px rgba(72,223,255,0.32);
+      transform: translateY(-2px);
+    }
+
+    .primary-button:active,
+    .secondary-button:active,
+    .text-button:active,
+    .time-chip:active {
+      transform: scale(0.97);
+    }
+
+    .topic-label {
+      margin: 0 0 15px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .chosen-topic {
+      margin: 0 auto;
+      max-width: 560px;
+      overflow-wrap: anywhere;
+      color: #fff;
+      font-size: clamp(2.5rem, 10vw, 5.55rem);
+      line-height: 0.96;
+      font-weight: 900;
+      letter-spacing: -0.065em;
+      text-shadow: 0 0 42px rgba(147,112,255,0.25);
+    }
+
+    .section-label {
+      margin: 48px 0 17px;
+      color: var(--cyan);
+      font-size: .75rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+    }
+
+    .time-panel {
+      text-align: left;
+    }
+
+    .chip-list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    .time-chip {
+      min-height: 48px;
+      padding: 9px 6px;
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 12px;
+      color: #dfe0e8;
+      background: rgba(255,255,255,0.045);
+      font-size: .84rem;
+      font-weight: 800;
+      transition: all .18s ease;
+    }
+
+    .time-chip:hover {
+      border-color: rgba(72,223,255,0.65);
+      color: white;
+    }
+
+    .time-chip.selected {
+      border-color: var(--cyan);
+      color: #061318;
+      background: var(--cyan);
+      box-shadow: 0 0 0 3px rgba(72,223,255,0.12), 0 0 26px rgba(72,223,255,0.28);
+    }
+
+    .custom-fields {
+      display: none;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+      animation: fadeUp .24s ease;
+    }
+
+    .custom-fields.show {
+      display: grid;
+    }
+
+    .field-label {
+      display: block;
+      margin: 0 0 7px;
+      color: #c6c8d2;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+
+    .number-input {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 11px;
+      color: white;
+      background: rgba(0,0,0,0.28);
+    }
+
+    .number-input:focus {
+      border-color: var(--violet);
+      box-shadow: 0 0 0 3px rgba(147,112,255,.17);
+      outline: none;
+    }
+
+    .random-word {
+      min-height: 110px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow-wrap: anywhere;
+      color: white;
+      font-size: clamp(2.9rem, 12vw, 5.5rem);
+      font-weight: 900;
+      line-height: .92;
+      letter-spacing: -0.07em;
+      text-shadow: 0 0 38px rgba(255,75,189,.32);
+      transition: opacity .14s ease, transform .14s ease, filter .14s ease;
+    }
+
+    .random-word.spin {
+      opacity: .35;
+      filter: blur(6px);
+      transform: scale(.92);
+    }
+
+    .random-hint {
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+
+    .timer-screen .screen-inner {
+      display: flex;
+      min-height: 490px;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .timer-topic {
+      max-width: 530px;
+      margin: 0;
+      overflow-wrap: anywhere;
+      color: #f7f8ff;
+      font-size: clamp(1.5rem, 6vw, 2.35rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.045em;
+    }
+
+    .countdown {
+      margin: 34px 0 16px;
+      font-variant-numeric: tabular-nums;
+      color: white;
+      font-size: clamp(5rem, 20vw, 10rem);
+      font-weight: 900;
+      line-height: .8;
+      letter-spacing: -0.085em;
+      text-shadow:
+        0 0 26px rgba(72,223,255,.42),
+        0 0 80px rgba(147,112,255,.22);
+    }
+
+    .speaking-status {
+      margin: 0;
+      color: var(--success);
+      font-size: .76rem;
+      font-weight: 900;
+      letter-spacing: .19em;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    .timer-controls,
+    .up-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      flex-wrap: wrap;
+    }
+
+    .timer-controls {
+      margin-top: 45px;
+    }
+
+    .text-button {
+      padding: 9px 8px;
+      color: #c9cad3;
+      background: transparent;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+    }
+
+    .text-button:hover {
+      color: var(--cyan);
+    }
+
+    .up-title {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(3.4rem, 14vw, 6.6rem);
+      line-height: .84;
+      font-weight: 900;
+      letter-spacing: -.08em;
+      text-shadow: 0 0 43px rgba(255,75,189,.38);
+      animation: timeUp .62s cubic-bezier(.17,.85,.25,1.22);
+    }
+
+    .up-topic {
+      margin: 27px auto 35px;
+      max-width: 470px;
+      color: #cfcfda;
+      font-size: clamp(1.25rem, 5vw, 1.8rem);
+      font-weight: 750;
+      overflow-wrap: anywhere;
+    }
+
+    .up-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: 100%;
+    }
+
+    .secondary-button {
+      padding: 15px 12px;
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 14px;
+      color: white;
+      background: rgba(255,255,255,.07);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+    }
+
+    .secondary-button:hover {
+      border-color: var(--violet);
+      background: rgba(147,112,255,.18);
+      box-shadow: 0 0 25px rgba(147,112,255,.18);
+      transform: translateY(-2px);
+    }
+
+    .up-back {
+      grid-column: 1 / -1;
+    }
+
+    @keyframes screenIn {
+      from { opacity: 0; transform: translateY(12px) scale(.985); }
+      to { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      50% { opacity: .48; }
+    }
+
+    @keyframes timeUp {
+      0% { opacity: 0; transform: scale(.6); filter: blur(10px); }
+      100% { opacity: 1; transform: scale(1); filter: blur(0); }
+    }
+
+    @media (max-width: 460px) {
+      .app-shell { padding: 22px 14px; }
+      .screen { min-height: 480px; }
+      .topic-input-wrap, .time-panel { padding: 17px; border-radius: 19px; }
+      .chip-list { gap: 6px; }
+      .time-chip { font-size: .73rem; padding: 8px 3px; }
+      .orbit { width: 340px; height: 340px; }
+      .up-actions { grid-template-columns: 1fr; }
+      .up-back { grid-column: auto; }
+    }
+  </style>
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js" type="text/javascript"></script>
+  <script src="/_sdk/8de366929c5f3b48.data_sdk.js" type="text/javascript" integrity="sha512-TyQ8k8cZj66xe/aENmn6RyZpdOFZXbAo5+KBG3PeFM+Q4qMTHU8xAqmq4ADClNfPrstgQYV6OzZHwLTnElzB2g=="></script>
+  <script src="/_sdk/0ddbbee1c66b1212.editing_sdk.js" type="text/javascript" integrity="sha512-HQn5LM1yruQSbY78ATUril6QeOJ9xj7KqO64ltLtb4vBwI5Qv3/tloFFOndBPZTNZoeV5xKzuth5y6FTi9crsg=="></script>
+  <script src="/_sdk/765e1fea0cec97ce.resizing_sdk.js" type="text/javascript" integrity="sha512-IRTJnqww0+HQ5V/LlWEQrlD5SrYHaVvaeVoNe8HYQXoaguzUGheSd9+n9s6WOgaTcEH0g37DuINHZ9aqfzWjlw=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(5, 5, 5);">
+  <main class="app-shell" aria-label="SPEAKU. latihan public speaking">
+   <div class="grid-lines" aria-hidden="true"></div>
+   <div class="orbit" aria-hidden="true"></div>
+   <div class="main-card">
+    <section id="topics-screen" class="screen active" aria-labelledby="brand-title">
+     <div class="screen-inner">
+      <h1 id="brand-title" data-template-id="brand-title" class="canva-text title" style="color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 32px;">SPEAKU.</h1>
+      <p data-template-id="brand-tagline" class="canva-text tagline" style="color: rgb(175, 177, 188); font-weight: 400; font-style: normal; font-size: 16px;">Random topic. Think fast. Speak.</p>
+      <div class="topic-input-wrap">
+       <label for="topics-input" data-template-id="topics-label" class="canva-text eyebrow" style="color: rgb(72, 223, 255); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">YOUR TOPICS</label> <textarea id="topics-input" aria-describedby="topic-count topic-error" placeholder="Masukkan topik, satu topik per baris..." spellcheck="true"></textarea>
+       <div class="meta-row">
+        <span id="topic-count" aria-live="polite"></span>
+       </div>
+       <p id="topic-error" class="error-message" aria-live="assertive"></p>
+      </div><button id="start-topics" data-template-id="start-button" class="canva-button primary-button" type="button" style="background: linear-gradient(105deg, rgb(72, 223, 255), rgb(145, 244, 255)); color: rgb(7, 16, 22); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.13rem;">START</button>
+     </div>
+    </section>
+    <section id="random-screen" class="screen" aria-labelledby="random-label">
+     <div class="screen-inner">
+      <p id="random-label" data-template-id="random-label" class="canva-text topic-label" style="color: rgb(175, 177, 188); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">YOUR TOPIC</p>
+      <div id="random-word" class="random-word" aria-live="polite"></div>
+      <p data-template-id="random-hint" class="canva-text random-hint" style="color: rgb(175, 177, 188); font-weight: 400; font-style: normal; font-size: 16px;">Menentukan topik spontanmu...</p>
+     </div>
+    </section>
+    <section id="time-screen" class="screen" aria-labelledby="time-topic-label">
+     <div class="screen-inner">
+      <p id="time-topic-label" data-template-id="your-topic-label" class="canva-text topic-label" style="color: rgb(175, 177, 188); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">YOUR TOPIC</p>
+      <h2 id="time-topic" class="chosen-topic" aria-live="polite"></h2>
+      <p data-template-id="speaking-time-label" class="canva-text section-label" style="color: rgb(72, 223, 255); font-weight: 900; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">SPEAKING TIME</p>
+      <div class="time-panel">
+       <div class="chip-list" role="group" aria-label="Pilih durasi berbicara">
+        <button class="time-chip" type="button" data-duration="60">01:00</button> <button class="time-chip selected" type="button" data-duration="120">02:00</button> <button class="time-chip" type="button" data-duration="180">03:00</button> <button class="time-chip" type="button" data-duration="300">05:00</button> <button id="custom-chip" data-template-id="custom-chip" class="canva-button time-chip" type="button" style="background: rgba(255, 255, 255, 0.043); color: rgb(223, 224, 232); font-weight: 800; font-style: normal; font-size: 13px;">CUSTOM</button>
+       </div>
+       <div id="custom-fields" class="custom-fields">
+        <div>
+         <label for="custom-minutes" data-template-id="minutes-label" class="canva-text field-label" style="color: rgb(198, 200, 210); font-weight: 700; font-style: normal; font-size: 13px;">Menit</label> <input id="custom-minutes" class="number-input" type="number" min="0" step="1" value="2" inputmode="numeric">
+        </div>
+        <div>
+         <label for="custom-seconds" data-template-id="seconds-label" class="canva-text field-label" style="color: rgb(198, 200, 210); font-weight: 700; font-style: normal; font-size: 13px;">Detik</label> <input id="custom-seconds" class="number-input" type="number" min="0" step="1" value="30" inputmode="numeric">
+        </div>
+       </div>
+       <p id="duration-error" class="error-message" aria-live="assertive"></p>
+      </div><button id="start-speaking" data-template-id="start-speaking-button" class="canva-button primary-button" type="button" style="background: linear-gradient(105deg, rgb(72, 223, 255), rgb(145, 244, 255)); color: rgb(7, 16, 22); font-weight: 900; font-style: normal; font-size: 16px; letter-spacing: 0.1rem;">START SPEAKING</button>
+     </div>
+    </section>
+    <section id="timer-screen" class="screen timer-screen" aria-labelledby="timer-topic-label">
+     <div class="screen-inner">
+      <p id="timer-topic-label" data-template-id="timer-topic-label" class="canva-text topic-label" style="color: rgb(175, 177, 188); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.18rem;">YOUR TOPIC</p>
+      <h2 id="timer-topic" class="timer-topic" aria-live="polite"></h2>
+      <div id="countdown" class="countdown" aria-live="assertive">
+       02:00
+      </div>
+      <p data-template-id="speaking-status" class="canva-text speaking-status" style="color: rgb(157, 255, 114); font-weight: 900; font-style: normal; font-size: 12px; letter-spacing: 0.19rem;">SPEAKING...</p>
+      <div class="timer-controls">
+       <button id="timer-back" data-template-id="timer-back-button" class="canva-button text-button" type="button" style="color: rgb(201, 202, 211); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">← BACK</button> <button id="timer-reset" data-template-id="reset-button" class="canva-button text-button" type="button" style="color: rgb(201, 202, 211); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">RESET</button> <button id="timer-home" data-template-id="timer-home-button" class="canva-button text-button" type="button" style="color: rgb(201, 202, 211); font-weight: 800; font-style: normal; font-size: 12px; letter-spacing: 0.1rem;">HOME</button>
+      </div>
+     </div>
+    </section>
+    <section id="up-screen" class="screen" aria-labelledby="up-title">
+     <div class="screen-inner">
+      <h2 id="up-title" data-template-id="time-up-title" class="canva-text up-title" style="color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 24px;">TIME’S UP.</h2>
+      <p id="up-topic" class="up-topic" aria-live="polite"></p>
+      <div class="up-actions">
+       <button id="new-topic" data-template-id="new-topic-button" class="canva-button secondary-button" type="button" style="background: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">NEW TOPIC</button> <button id="try-again" data-template-id="try-again-button" class="canva-button secondary-button" type="button" style="background: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">TRY AGAIN</button> <button id="up-back" data-template-id="up-back-button" class="canva-button secondary-button up-back" type="button" style="background: rgba(255, 255, 255, 0.07); color: rgb(255, 255, 255); font-weight: 900; font-style: normal; font-size: 12px; letter-spacing: 0.08rem;">← BACK</button>
+      </div>
+     </div>
+    </section>
+   </div>
+  </main>
+  <script>
+    (() => {
+      const storageKey = "speak-topics";
+      const state = {
+        topics: [],
+        currentTopic: "",
+        previousTopic: "",
+        selectedSeconds: 120,
+        selectedMode: "120",
+        timerId: null,
+        endsAt: 0,
+        isRandomizing: false
+      };
+
+      const screens = {
+        topics: document.getElementById("topics-screen"),
+        random: document.getElementById("random-screen"),
+        time: document.getElementById("time-screen"),
+        timer: document.getElementById("timer-screen"),
+        up: document.getElementById("up-screen")
+      };
+
+      const topicsInput = document.getElementById("topics-input");
+      const topicCount = document.getElementById("topic-count");
+      const topicError = document.getElementById("topic-error");
+      const randomWord = document.getElementById("random-word");
+      const timeTopic = document.getElementById("time-topic");
+      const timerTopic = document.getElementById("timer-topic");
+      const upTopic = document.getElementById("up-topic");
+      const countdown = document.getElementById("countdown");
+      const durationError = document.getElementById("duration-error");
+      const customFields = document.getElementById("custom-fields");
+      const customMinutes = document.getElementById("custom-minutes");
+      const customSeconds = document.getElementById("custom-seconds");
+      const chips = Array.from(document.querySelectorAll(".time-chip"));
+
+      function parseTopics(value) {
+        return value
+          .split(/\r?\n/)
+          .map(topic => topic.trim())
+          .filter(Boolean);
+      }
+
+      function updateTopicCount() {
+        const total = parseTopics(topicsInput.value).length;
+        topicCount.textContent = total + (total === 1 ? " topik siap" : " topik siap");
+        state.topics = parseTopics(topicsInput.value);
+      }
+
+      function loadTopics() {
+        let stored = "";
+        try {
+          stored = localStorage.getItem(storageKey) || "";
+        } catch (error) {
+          stored = "";
+        }
+
+        topicsInput.value = stored.trim() ? stored : "";
+        updateTopicCount();
+      }
+
+      function saveTopics() {
+        try {
+          localStorage.setItem(storageKey, topicsInput.value);
+        } catch (error) {
+          /* Penyimpanan lokal tidak tersedia, aplikasi tetap berfungsi dalam sesi ini. */
+        }
+      }
+
+      function showScreen(name) {
+        Object.values(screens).forEach(screen => screen.classList.remove("active"));
+        screens[name].classList.add("active");
+      }
+
+      function formatTime(totalSeconds) {
+        const safeSeconds = Math.max(0, Math.ceil(totalSeconds));
+        const minutes = Math.floor(safeSeconds / 60);
+        const seconds = safeSeconds % 60;
+        return String(minutes).padStart(2, "0") + ":" + String(seconds).padStart(2, "0");
+      }
+
+      function stopTimer() {
+        if (state.timerId) {
+          clearInterval(state.timerId);
+          state.timerId = null;
+        }
+      }
+
+      function renderDurationSelection() {
+        chips.forEach(chip => {
+          const active = chip.dataset.duration === state.selectedMode || (chip.id === "custom-chip" && state.selectedMode === "custom");
+          chip.classList.toggle("selected", active);
+          chip.setAttribute("aria-pressed", String(active));
+        });
+
+        customFields.classList.toggle("show", state.selectedMode === "custom");
+      }
+
+      function selectTopic() {
+        const pool = state.topics;
+        if (!pool.length) return "";
+
+        let available = pool;
+        if (pool.length > 1 && state.previousTopic) {
+          available = pool.filter(topic => topic !== state.previousTopic);
+          if (!available.length) available = pool;
+        }
+
+        return available[Math.floor(Math.random() * available.length)];
+      }
+
+      function startRandomTopic() {
+        state.topics = parseTopics(topicsInput.value);
+
+        if (!state.topics.length) {
+          topicError.textContent = "Masukkan minimal satu topik untuk memulai.";
+          topicsInput.focus();
+          return;
+        }
+
+        if (state.isRandomizing) return;
+
+        topicError.textContent = "";
+        state.isRandomizing = true;
+        showScreen("random");
+
+        const finalTopic = selectTopic();
+        let turns = 0;
+        const totalTurns = 12;
+        randomWord.classList.add("spin");
+
+        const randomInterval = setInterval(() => {
+          const displayTopic = state.topics[Math.floor(Math.random() * state.topics.length)];
+          randomWord.textContent = displayTopic;
+          randomWord.classList.add("spin");
+
+          requestAnimationFrame(() => {
+            randomWord.classList.remove("spin");
+          });
+
+          turns += 1;
+
+          if (turns >= totalTurns) {
+            clearInterval(randomInterval);
+            setTimeout(() => {
+              randomWord.classList.add("spin");
+              setTimeout(() => {
+                state.currentTopic = finalTopic;
+                state.previousTopic = finalTopic;
+                randomWord.textContent = finalTopic;
+                randomWord.classList.remove("spin");
+
+                setTimeout(() => {
+                  timeTopic.textContent = state.currentTopic;
+                  showScreen("time");
+                  state.isRandomizing = false;
+                }, 420);
+              }, 160);
+            }, 120);
+          }
+        }, 115);
+      }
+
+      function getCustomDuration() {
+        let minutes = Number.parseInt(customMinutes.value, 10);
+        let seconds = Number.parseInt(customSeconds.value, 10);
+
+        if (!Number.isFinite(minutes) || minutes < 0) minutes = 0;
+        if (!Number.isFinite(seconds) || seconds < 0) seconds = 0;
+
+        minutes += Math.floor(seconds / 60);
+        seconds = seconds % 60;
+
+        customMinutes.value = minutes;
+        customSeconds.value = seconds;
+
+        return (minutes * 60) + seconds;
+      }
+
+      function beginSpeaking() {
+        durationError.textContent = "";
+
+        if (state.selectedMode === "custom") {
+          const customDuration = getCustomDuration();
+
+          if (customDuration <= 0) {
+            durationError.textContent = "Durasi harus lebih dari 0 detik.";
+            customMinutes.focus();
+            return;
+          }
+
+          state.selectedSeconds = customDuration;
+        }
+
+        if (state.selectedSeconds <= 0) {
+          durationError.textContent = "Pilih durasi berbicara terlebih dahulu.";
+          return;
+        }
+
+        timerTopic.textContent = state.currentTopic;
+        countdown.textContent = formatTime(state.selectedSeconds);
+        showScreen("timer");
+
+        stopTimer();
+        state.endsAt = Date.now() + (state.selectedSeconds * 1000);
+
+        function tick() {
+          const remaining = Math.max(0, Math.ceil((state.endsAt - Date.now()) / 1000));
+          countdown.textContent = formatTime(remaining);
+
+          if (remaining <= 0) {
+            stopTimer();
+            upTopic.textContent = state.currentTopic;
+            showScreen("up");
+          }
+        }
+
+        tick();
+        state.timerId = setInterval(tick, 180);
+      }
+
+      function backToTime() {
+        stopTimer();
+        timeTopic.textContent = state.currentTopic;
+        durationError.textContent = "";
+        showScreen("time");
+      }
+
+      function resetTimer() {
+        stopTimer();
+        countdown.textContent = formatTime(state.selectedSeconds);
+      }
+
+      topicsInput.addEventListener("input", () => {
+        updateTopicCount();
+        saveTopics();
+        if (topicError.textContent) topicError.textContent = "";
+      });
+
+      document.getElementById("start-topics").addEventListener("click", startRandomTopic);
+
+      chips.forEach(chip => {
+        chip.addEventListener("click", () => {
+          durationError.textContent = "";
+
+          if (chip.id === "custom-chip") {
+            state.selectedMode = "custom";
+            const customDuration = getCustomDuration();
+            if (customDuration > 0) state.selectedSeconds = customDuration;
+          } else {
+            state.selectedMode = chip.dataset.duration;
+            state.selectedSeconds = Number(chip.dataset.duration);
+          }
+
+          renderDurationSelection();
+        });
+      });
+
+      customMinutes.addEventListener("input", () => {
+        if (state.selectedMode === "custom") {
+          state.selectedSeconds = getCustomDuration();
+          durationError.textContent = "";
+        }
+      });
+
+      customSeconds.addEventListener("input", () => {
+        if (state.selectedMode === "custom") {
+          state.selectedSeconds = getCustomDuration();
+          durationError.textContent = "";
+        }
+      });
+
+      document.getElementById("start-speaking").addEventListener("click", beginSpeaking);
+      document.getElementById("timer-back").addEventListener("click", backToTime);
+      document.getElementById("timer-reset").addEventListener("click", resetTimer);
+      document.getElementById("timer-home").addEventListener("click", () => {
+        stopTimer();
+        topicError.textContent = "";
+        updateTopicCount();
+        showScreen("topics");
+      });
+      document.getElementById("new-topic").addEventListener("click", startRandomTopic);
+      document.getElementById("try-again").addEventListener("click", backToTime);
+
+      document.getElementById("up-back").addEventListener("click", () => {
+        stopTimer();
+        topicError.textContent = "";
+        updateTopicCount();
+        showScreen("topics");
+      });
+
+      loadTopics();
+      renderDurationSelection();
+    })();
+  </script>
+ 
+</body></html>
